@@ -173,8 +173,6 @@ This project was built with <img src="https://img.icons8.com/color/48/like.png" 
 
 | **Sanjay G** | 
 | **Vignesh B** |
-| **TUSHHARA NN** |
-| **HARIDHARAN D** |
 
 ---
 
