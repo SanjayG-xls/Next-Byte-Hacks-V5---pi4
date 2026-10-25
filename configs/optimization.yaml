@@ -1,0 +1,48 @@
+# BytePi4 Optimization Engine Configuration
+
+resource_manager:
+  thresholds:
+    cpu:
+      low: 30.0
+      high: 75.0
+      critical: 90.0
+    memory:
+      low: 40.0
+      high: 80.0
+      critical: 90.0
+    temperature:
+      low: 50.0
+      high: 70.0
+      critical: 80.0
+    latency_ms:
+      high: 100.0
+      critical: 200.0
+    fps:
+      low_target: 15.0
+  stability:
+    consecutive_samples_required: 2
+    history_window: 5
+
+adaptive_skip:
+  min_skip: 0
+  max_skip: 4
+  recovery_step: 1
+  minimum_hold_cycles: 2
+  state_skip_mapping:
+    LOW_LOAD: 0
+    NORMAL: 0
+    HIGH_LOAD: 2
+    CRITICAL: 4
+
+dynamic_resolution:
+  enabled: true
+  levels:
+    - [640, 480]
+    - [512, 384]
+    - [480, 360]
+    - [320, 240]
+  default_level: 0
+  recovery_step: 1
+  degradation_step: 1
+  minimum_hold_cycles: 3
+

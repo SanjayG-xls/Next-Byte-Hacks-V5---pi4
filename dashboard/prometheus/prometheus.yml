@@ -1,0 +1,30 @@
+global:
+  scrape_interval: 2s
+  evaluation_interval: 2s
+
+scrape_configs:
+
+  # ==========================================================
+  # BytePi4 Runtime
+  # ==========================================================
+
+  - job_name: "bytepi4"
+    static_configs:
+      - targets:
+          - "localhost:8000"
+        labels:
+          application: "bytepi4"
+          platform: "development"
+          environment: "local"
+
+  # ==========================================================
+  # Prometheus
+  # ==========================================================
+
+  - job_name: "prometheus"
+    static_configs:
+      - targets:
+          - "localhost:9090"
+        labels:
+          application: "prometheus"
+          environment: "local"
